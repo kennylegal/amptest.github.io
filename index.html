@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Platform - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-signup {
+            background-color: #fff;
+            color: #667eea;
+        }
+
+        .btn-signup:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-demo {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        .btn-demo:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .secondary-cta {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .secondary-cta p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .btn-secondary {
+            padding: 12px 30px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #764ba2;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AnalytiCS</div>
+            <div>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Track Every Customer Interaction</h1>
+            <p class="subtitle">Real-time analytics to understand user behavior and drive growth</p>
+            <div class="cta-container">
+                <button class="cta-button btn-signup" id="signupBtn">Sign Up Free</button>
+                <button class="cta-button btn-demo" id="demoBtn">Request Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 style="text-align: center; margin-bottom: 50px; font-size: 36px;">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📊 Real-Time Analytics</h3>
+                <p>Get instant insights into user behavior with real-time event tracking and analysis dashboards.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Funnel Analysis</h3>
+                <p>Understand your user journey and identify drop-off points in your conversion funnel.</p>
+            </div>
+            <div class="feature-card">
+                <h3>👥 User Cohorts</h3>
+                <p>Segment users based on behavior and run targeted campaigns for each cohort.</p>
+            </div>
+        </div>
+
+        <div class="secondary-cta">
+            <p>Ready to get started?</p>
+            <button class="btn-secondary" id="contactBtn">Contact Sales</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AnalytiCS. All rights reserved.</p>
+    </footer>
+
+    <!-- Amplitude Script -->
+    <script type="text/javascript">
+        (function(window, document) {
+            window.amplitude = window.amplitude || { _q: [], _iq: {} };
+            var as = document.createElement('script');
+            as.type = 'text/javascript';
+            as.async = true;
+            as.src = 'https://cdn.amplitude.com/libs/amplitude-8.17.0-min.gz.js';
+            as.onload = function() {
+                if (window.amplitude.isInitialized) {
+                    return;
+                }
+                // Initialize with your API Key
+                window.amplitude.init('e37d0a7e40027b9b901aa92f70a31085', null, {
+                    logLevel: 'INFO'
+                });
+            };
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(as, s);
+        })(window, document);
+    </script>
+
+    <!-- Event Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track Sign Up button click
+            document.getElementById('signupBtn').addEventListener('click', function() {
+                if (window.amplitude && window.amplitude.logEvent) {
+                    window.amplitude.logEvent('CTA_Clicked', {
+                        cta_type: 'Sign Up',
+                        page: 'Landing Page',
+                        timestamp: new Date().toISOString()
+                    });
+                }
+                alert('Thank you for your interest! Sign up form would open here.');
+            });
+
+            // Track Request Demo button click
+            document.getElementById('demoBtn').addEventListener('click', function() {
+                if (window.amplitude && window.amplitude.logEvent) {
+                    window.amplitude.logEvent('CTA_Clicked', {
+                        cta_type: 'Request Demo',
+                        page: 'Landing Page',
+                        timestamp: new Date().toISOString()
+                    });
+                }
+                alert('Thank you! We\'ll contact you soon to schedule a demo.');
+            });
+
+            // Track Contact Sales button click
+            document.getElementById('contactBtn').addEventListener('click', function() {
+                if (window.amplitude && window.amplitude.logEvent) {
+                    window.amplitude.logEvent('CTA_Clicked', {
+                        cta_type: 'Contact Sales',
+                        page: 'Landing Page',
+                        timestamp: new Date().toISOString()
+                    });
+                }
+                alert('Our sales team will reach out to you shortly.');
+            });
+
+            // Log page view
+            if (window.amplitude && window.amplitude.logEvent) {
+                window.amplitude.logEvent('Page_Viewed', {
+                    page_name: 'Landing Page',
+                    timestamp: new Date().toISOString()
+                });
+            }
+        });
+    </script>
+</body>
+</html>
