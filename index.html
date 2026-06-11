@@ -207,34 +207,6 @@
         </div>
     </section>
 
-    <section class="features" id="features">
-        <h2 style="text-align: center; margin-bottom: 50px; font-size: 36px;">Why Choose Us</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>📊 Real-Time Analytics</h3>
-                <p>Get instant insights into user behavior with real-time event tracking and analysis dashboards.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🎯 Funnel Analysis</h3>
-                <p>Understand your user journey and identify drop-off points in your conversion funnel.</p>
-            </div>
-            <div class="feature-card">
-                <h3>👥 User Cohorts</h3>
-                <p>Segment users based on behavior and run targeted campaigns for each cohort.</p>
-            </div>
-        </div>
-
-        <div class="secondary-cta">
-            <p>Ready to get started?</p>
-            <button class="btn-secondary" id="contactBtn">Contact Sales</button>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 AnalytiCS. All rights reserved.</p>
-    </footer>
-
-    <!-- Amplitude Script -->
     <script type="text/javascript">
         (function(window, document) {
             window.amplitude = window.amplitude || { _q: [], _iq: {} };
@@ -268,10 +240,11 @@
                         timestamp: new Date().toISOString()
                     });
                 }
-                alert('Thank you for your interest! Sign up form would open here.');
+                setTimeout(function() {
+                    window.location.href = 'thankyou.html';
+                }, 300);
             });
 
-            // Track Request Demo button click
             document.getElementById('demoBtn').addEventListener('click', function() {
                 if (window.amplitude && window.amplitude.logEvent) {
                     window.amplitude.logEvent('CTA_Clicked', {
@@ -283,19 +256,7 @@
                 alert('Thank you! We\'ll contact you soon to schedule a demo.');
             });
 
-            // Track Contact Sales button click
-            document.getElementById('contactBtn').addEventListener('click', function() {
-                if (window.amplitude && window.amplitude.logEvent) {
-                    window.amplitude.logEvent('CTA_Clicked', {
-                        cta_type: 'Contact Sales',
-                        page: 'Landing Page',
-                        timestamp: new Date().toISOString()
-                    });
-                }
-                alert('Our sales team will reach out to you shortly.');
-            });
 
-            // Log page view
             if (window.amplitude && window.amplitude.logEvent) {
                 window.amplitude.logEvent('Page_Viewed', {
                     page_name: 'Landing Page',
