@@ -219,7 +219,7 @@
                     return;
                 }
                 // Initialize with your API Key
-                window.amplitude.init('42da0243869ae4a7ee132775f80e38d3', null, {
+                window.amplitude.init('e37d0a7e40027b9b901aa92f70a31085', null, {
                     logLevel: 'INFO'
                 });
             };
@@ -230,11 +230,13 @@
 
     <!-- Event Tracking -->
     <script>
+        console.log(window.amplitude);
+        console.log("Amplitude loaded");
         document.addEventListener('DOMContentLoaded', function() {
             // Track Sign Up button click
             document.getElementById('signupBtn').addEventListener('click', function() {
                 if (window.amplitude && window.amplitude.logEvent) {
-                    window.amplitude.logEvent('CTA_Clicked', {
+                    window.amplitude.logEvent('Clicked_CTA', {
                         cta_type: 'Sign Up',
                         page: 'Landing Page',
                         timestamp: new Date().toISOString()
@@ -245,7 +247,7 @@
 
             document.getElementById('demoBtn').addEventListener('click', function() {
                 if (window.amplitude && window.amplitude.logEvent) {
-                    window.amplitude.logEvent('CTA_Clicked', {
+                    window.amplitude.logEvent('Clicked_CTA', {
                         cta_type: 'Request Demo',
                         page: 'Landing Page',
                         timestamp: new Date().toISOString()
@@ -255,13 +257,16 @@
             });
 
 
+         window.addEventListener('load', () => {
             if (window.amplitude && window.amplitude.logEvent) {
-                window.amplitude.logEvent('Page_Viewed', {
-                    page_name: 'Landing Page',
-                    timestamp: new Date().toISOString()
+                window.amplitude.logEvent('Page_Loaded', {
+                page_name: 'Landing Page',
+                timestamp: new Date().toISOString()
                 });
             }
+            });
         });
+        console.log("Page loadedss");
     </script>
 </body>
 </html>
